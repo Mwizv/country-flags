@@ -1,0 +1,42 @@
+body {
+    font-family: sans-serif;
+    padding:20px;
+    max-width:1500px;
+    margin:auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); /*  as many columns as will fit, each column at least 250px wide */
+    gap: 20px;
+    margin-top: 20px;
+}
+a {
+    text-decoration: none;
+    
+}
+.card {
+    border: 1px solid #ddd;
+    border-radius: 16px; /* how round corners */
+    padding: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3); /*https://dextrop.medium.com/mastering-box-shadows-a-practical-guide-with-bootstrap-cards-819cd2da7945 */
+    align-items:center;
+    text-align:center;
+    display: flex;
+    flex-direction: column; /* stack children */
+}
+
+.card h3 {
+    margin-bottom: 2px;
+}
+.card p {
+    margin-bottom: 20px;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+.card img {
+    margin:auto;
+    max-height:200px;
+    object-fit:contain;
+}
