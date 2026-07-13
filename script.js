@@ -62,12 +62,14 @@ fetch("countriesData.json")
         let html = "";
 
         countries.forEach(country => {
+            const phone = country.idd.root + country.idd.suffixes[0];
             html += `
                 <div class="card">
-                    <img src="${country.flag}">
+                    <img src="https://flagcdn.com/w320/${country.cca2.toLowerCase()}.png">
                     <h3>${country.name.common}</h3>
                     <p>${country.cca2}, ${country.cca3}, ${country.ccn3}</p>
                     <p>${country.capital}, ${country.region}, ${Object.values(country.languages).join(", ")}</p>
+                    <p>${phone}, ${country.timezones}, ${Object.values(country.currencies).map(currency => `${currency.symbol} ${currency.name}`).join(", ")}</p>
                 </div>
             `;
         });
