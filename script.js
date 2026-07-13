@@ -68,8 +68,9 @@ fetch("countriesData.json")
                     <img src="https://flagcdn.com/w320/${country.cca2.toLowerCase()}.png">
                     <h3>${country.name.common}</h3>
                     <p>${country.cca2}, ${country.cca3}, ${country.ccn3}</p>
-                    <p>${country.capital}, ${country.region}, ${Object.values(country.languages).join(", ")}</p>
-                    <p>${phone}, ${country.timezones}, ${Object.values(country.currencies).map(currency => `${currency.symbol} ${currency.name}`).join(", ")}</p>
+                    <p>Capital: ${country.capital}, Region: ${country.region}</p>
+                    <p>Languages: ${Object.values(country.languages).join(", ")}</p>
+                    <p>Telephone code:${phone}, Currency: ${Object.values(country.currencies).map(currency => `${currency.symbol} ${currency.name}`).join(", ")}</p>
                 </div>
             `;
         });
