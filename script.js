@@ -55,7 +55,7 @@ fetch("countriesData.json")
     .then(response => response.json())
     .then(countries => {
         console.log(countries[0]);
-    });
+
 
     const grid = document.querySelector(".grid");
 
@@ -67,9 +67,11 @@ fetch("countriesData.json")
                     <img src="${country.flag}">
                     <h3>${country.name.common}</h3>
                     <p>${country.cca2}, ${country.cca3}, ${country.ccn3}</p>
+                    <p>${country.capital}, ${country.region}, ${Object.values(country.languages).join(", ")}</p>
                 </div>
             `;
         });
     
 
-grid.innerHTML = html;
+    grid.innerHTML = html;
+});
