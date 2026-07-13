@@ -1,6 +1,6 @@
 const countries = [{
     name: "Afghanistan",
-    code: "AF",
+    alpha2: "AF",
     numeric: "004",
 
     continent: "Asia",
@@ -9,16 +9,47 @@ const countries = [{
     hexcodes: "FFFFFF 000000",
     capital: "Kabul",
     currency: "؋ Afghan Afghani (AFN)"
-}];
+},
+
+{
+    name: "Albania",
+    alpha2: "AL",
+    numeric: "008",
+
+    continent: "Europe",
+    telephone_code: "+355",
+    utc: "+01:00 (CET)",
+    dst: "+02:00",
+    hexcodes: "DA291C 000000",
+    capital: "Tirana",
+    currency: "L Albanian lek (ALL)"
+},
+{
+    name: "Algeria",
+    alpha2: "DZ",
+    numeric: "012",
+
+    continent: "Europe",
+    telephone_code: "+213",
+    utc: "+01:00",
+    hexcodes: "006633 D21034 FFFFFF",
+    capital: "Algiers",
+    currency: "؋ دج Algerian Dinar (DZD)"
+}
+
+];
 
 const grid = document.querySelector(".grid");
+let html = "";
 
 countries.forEach(country => {
-    grid.innerHTML += `
+    html += `
         <div class="card">
-            <img src="https://flagcdn.com/w320/${country.code.toLowerCase()}.png">
-            <h3>${country.name} ${country.code} ${country.numeric} </h3>
-            <p>${country.continent}, ${country.telephone_code}, UTC${country.utc}, ${country.hexcodes}, ${country.capital}, ${country.currency}</p>
+            <img src="https://flagcdn.com/w320/${country.alpha2.toLowerCase()}.png">
+            <h3>${country.name} ${country.alpha2} ${country.numeric} </h3>
+            <p>${country.continent}, ${country.telephone_code}, UTC${country.utc}, ${country.dst? `UTC${country.dst}` : ""} ${country.hexcodes}, ${country.capital}, ${country.currency}</p>
         </div>
     `;
 });
+
+grid.innerHTML = html;
